@@ -68,21 +68,13 @@ export const listPosts = /* GraphQL */ `
     $limit: Int
     $nextToken: String
   ) {
-    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listPosts(limit: 10) {
       items {
         id
-        title
-        comments {
-          nextToken
-          startedAt
-        }
-        rating
-        status
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
+      title
+      status
+      rating
+      _version
       }
       nextToken
       startedAt
