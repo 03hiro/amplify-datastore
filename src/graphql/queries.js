@@ -63,21 +63,15 @@ export const getPost = /* GraphQL */ `
   }
 `;
 export const listPosts = /* GraphQL */ `
-  query ListPosts(
-    $filter: ModelPostFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
+  query ListPosts {
     listPosts(limit: 10) {
       items {
-        id
+      id
       title
       status
       rating
       _version
       }
-      nextToken
-      startedAt
     }
   }
 `;

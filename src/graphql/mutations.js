@@ -33,33 +33,21 @@ export const createPost = /* GraphQL */ `
   }
 `;
 export const updatePost = /* GraphQL */ `
-  mutation UpdatePost(
-    $input: UpdatePostInput!
-    $condition: ModelPostConditionInput
-  ) {
-    updatePost(input: $input, condition: $condition) {
+  mutation UpdatePost {
+    updatePost(input: {
+      id: "37213df8-4622-4eba-abc8-6e22219937f1"
+      title: "updated title 10:20"
+      status: ACTIVE
+      rating: 7
+      _version: 1 
+    }) {
       id
       title
-      comments {
-        items {
-          id
-          content
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
-      rating
       status
+      rating
+      _lastChangedAt
       _version
       _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
